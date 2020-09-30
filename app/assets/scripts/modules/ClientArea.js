@@ -17,16 +17,15 @@ class ClientArea {
   }
 
   sendRequest() {
-    Axios.post(
-      "https://wonderful-goldwasser-7151de.netlify.app/.netlify/functions/secret-area",
-      { password: this.field.value }
-    )
+    Axios.post("place your Netlify end point url in here", {
+      password: this.field.value,
+    })
       .then((response) => {
         this.form.remove();
         this.contentArea.innerHTML = response.data;
       })
       .catch(() => {
-        this.contentArea.innerHTML = `<p class="client-area__error">That secret phrase is not correct. Try again.</p>`;
+        this.contentArea.innerHTML = `<p class="client-area__error">Your password is incorrect. Try again.</p>`;
         this.field.value = "";
         this.field.focus();
       });
@@ -40,7 +39,7 @@ class ClientArea {
       <div class="wrapper wrapper--medium">
         <h2 class="section-title section-title--blue">Client Area</h2>
         <form class="client-area__form" action="">
-          <input class="client-area__input" type="text" placeholder="Enter the secret phrase">
+          <input class="client-area__input" type="text" placeholder="Enter the your password here">
           <button class="btn btn--orange">Submit</button>
         </form>
         <div class="client-area__content-area"></div>
