@@ -18,7 +18,7 @@ class ClientArea {
 
   sendRequest() {
     Axios.post(
-      "https://pensive-rosalind-383c21.netlify.com/.netlify/functions/secret-area",
+      "https://wonderful-goldwasser-7151de.netlify.app/.netlify/functions/secret-area",
       { password: this.field.value }
     )
       .then((response) => {
